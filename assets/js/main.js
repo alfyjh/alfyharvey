@@ -5,10 +5,10 @@ const FREELANCE_AVAILABLE = false;
 
 document.addEventListener('DOMContentLoaded', () => {
   if (!FREELANCE_AVAILABLE) {
-    document.querySelectorAll('[data-freelance-available]').forEach(el => el.classList.add('hidden'));
-    document.querySelectorAll('[data-freelance-unavailable]').forEach(el => el.classList.remove('hidden'));
+    document.querySelectorAll('[data-freelance-available]').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('[data-freelance-unavailable]').forEach(el => { el.classList.remove('hidden'); el.style.display = ''; });
     document.querySelectorAll('[data-freelance] .bg-green-500').forEach(el => {
-      el.classList.replace('bg-green-500', 'bg-zinc-400');
+      el.style.backgroundColor = 'rgb(161 161 170)';
       el.classList.remove('animate-pulse');
     });
   }
