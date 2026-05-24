@@ -137,23 +137,42 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: true });
 }());
 
-// ── Contact form ──────────────────────────────────────────────────────────────
-// Note: replace the static form in page-contact.php with Contact Form 7 for
-// real email delivery. This handler is a visual-only placeholder.
+// ── Contact form (Formspree) ──────────────────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('.contact-form');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const btn = form.querySelector('[type="submit"]');
-      btn.textContent = 'Message sent!';
-      btn.disabled = true;
-      form.reset();
-      setTimeout(() => {
-        btn.textContent = 'Send Message';
-        btn.disabled = false;
-      }, 4000);
-    });
-  }
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  const btn     = document.getElementById('contact-submit');
+  const success = document.getElementById('form-success');
+  const error   = document.getElementById('form-error');
+
+  const SEND_LABEL = btn.innerHTML;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    success.classList.add('hidden');
+    error.classList.add('hidden');
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      if (res.ok) {
+        success.classList.remove('hidden');
+        form.reset();
+      } else {
+        error.classList.remove('hidden');
+      }
+    } catch {
+      error.classList.remove('hidden');
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = SEND_LABEL;
+    }
+  });
 });

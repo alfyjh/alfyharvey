@@ -92,13 +92,45 @@
               </div>
 
       <div class="grid md:grid-cols-[1fr_280px] gap-16 items-start">
-        <div class="fluent-form-wrap">
-          <div class='fluentform ff-default fluentform_wrapper_1 ffs_default_wrap'><form data-form_id="1" id="fluentform_1" class="frm-fluent-form fluent_form_1 ff-el-form-top ff_form_instance_1_1 ff-form-loading ffs_default" data-form_instance="ff_form_instance_1_1" method="POST" ><fieldset  style="border: none!important;margin: 0!important;padding: 0!important;background-color: transparent!important;box-shadow: none!important;outline: none!important; min-inline-size: 100%;">
-                    <legend class="ff_screen_reader_title" style="display: block; margin: 0!important;padding: 0!important;height: 0!important;text-indent: -999999px;width: 0!important;overflow:hidden;">Contact Form Demo</legend><input type='hidden' name='__fluent_form_embded_post_id' value='9' /><input type="hidden" id="_fluentform_1_fluentformnonce" name="_fluentform_1_fluentformnonce" value="432e901594" /><input type="hidden" name="_wp_http_referer" value="/contact/" /><div data-name="ff_cn_id_1"  class='ff-t-container ff-column-container ff_columns_total_2 '><div class='ff-t-cell ff-t-column-1' style='flex-basis: 50%;'><div class='ff-el-group'><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for='ff_1_input_text' id='label_ff_1_input_text' aria-label="First Name">First Name</label></div><div class='ff-el-input--content'><input type="text" name="input_text" class="ff-el-form-control" placeholder="First Name" data-name="input_text" id="ff_1_input_text"  aria-invalid="false" aria-required=true></div></div></div><div class='ff-t-cell ff-t-column-2' style='flex-basis: 50%;'><div class='ff-el-group'><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for='ff_1_input_text_1' id='label_ff_1_input_text_1' aria-label="Last Name">Last Name</label></div><div class='ff-el-input--content'><input type="text" name="input_text_1" class="ff-el-form-control" placeholder="Last Name" data-name="input_text_1" id="ff_1_input_text_1"  aria-invalid="false" aria-required=true></div></div></div></div><div class='ff-el-group'><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for='ff_1_email' id='label_ff_1_email' aria-label="Email">Email</label></div><div class='ff-el-input--content'><input type="email" name="email" id="ff_1_email" class="ff-el-form-control" placeholder="Email Address" data-name="email"  aria-invalid="false" aria-required=true></div></div><div class='ff-el-group'><div class="ff-el-input--label ff-el-is-required asterisk-right"><label for='ff_1_message' id='label_ff_1_message' aria-label="Your Message">Your Message</label></div><div class='ff-el-input--content'><textarea aria-required="true" aria-labelledby="label_ff_1_message" name="message" id="ff_1_message" class="ff-el-form-control" placeholder="Your Message" rows="4" cols="2" data-name="message" ></textarea></div></div><div class='ff-el-group ff-text-left ff_submit_btn_wrapper'><button type="submit" class="ff-btn ff-btn-submit ff-btn-md ff_btn_style wpf_has_custom_css"  aria-label="Submit Form">Submit Form</button></div></fieldset></form><div id='fluentform_1_errors' class='ff-errors-in-stack ff_form_instance_1_1 ff-form-loading_errors ff_form_instance_1_1_errors'></div></div>            <script type="text/javascript">
-                window.fluent_form_ff_form_instance_1_1 = {"id":"1","settings":{"layout":{"labelPlacement":"top","helpMessagePlacement":"with_label","errorMessagePlacement":"inline","cssClassName":"","asteriskPlacement":"asterisk-right"},"restrictions":{"denyEmptySubmission":{"enabled":false}}},"form_instance":"ff_form_instance_1_1","form_id_selector":"fluentform_1","rules":{"input_text":{"required":{"value":true,"message":"This field is required","global_message":"This field is required","global":true}},"input_text_1":{"required":{"value":true,"message":"This field is required","global_message":"This field is required","global":true}},"email":{"required":{"value":true,"message":"This field is required","global":false,"global_message":"This field is required"},"email":{"value":true,"message":"This field must contain a valid email","global":false,"global_message":"This field must contain a valid email"}},"message":{"required":{"value":true,"message":"This field is required","global":false,"global_message":"This field is required"}}},"debounce_time":300};
-                            </script>
-                      <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-4">By submitting this form you agree to your details being used to respond to your enquiry. View my <a href="privacy-policy/" class="text-violet-600 dark:text-violet-400 hover:underline">Privacy Policy</a>.</p>
-        </div>
+        <div>
+  <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6" novalidate>
+  <div class="grid sm:grid-cols-2 gap-6">
+    <div>
+      <label for="first-name" class="block text-sm font-semibold font-display text-zinc-700 dark:text-zinc-300 mb-1.5">First Name <span class="text-violet-500" aria-hidden="true">*</span></label>
+      <input type="text" id="first-name" name="first_name" required placeholder="First Name"
+        class="w-full px-4 py-3 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 text-sm text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500 transition-colors">
+    </div>
+    <div>
+      <label for="last-name" class="block text-sm font-semibold font-display text-zinc-700 dark:text-zinc-300 mb-1.5">Last Name <span class="text-violet-500" aria-hidden="true">*</span></label>
+      <input type="text" id="last-name" name="last_name" required placeholder="Last Name"
+        class="w-full px-4 py-3 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 text-sm text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500 transition-colors">
+    </div>
+  </div>
+  <div>
+    <label for="contact-email" class="block text-sm font-semibold font-display text-zinc-700 dark:text-zinc-300 mb-1.5">Email <span class="text-violet-500" aria-hidden="true">*</span></label>
+    <input type="email" id="contact-email" name="email" required placeholder="your@email.com"
+      class="w-full px-4 py-3 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 text-sm text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500 transition-colors">
+  </div>
+  <div>
+    <label for="message" class="block text-sm font-semibold font-display text-zinc-700 dark:text-zinc-300 mb-1.5">Message <span class="text-violet-500" aria-hidden="true">*</span></label>
+    <textarea id="message" name="message" required rows="5" placeholder="Tell me about your project..."
+      class="w-full px-4 py-3 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 text-sm text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500 transition-colors resize-none"></textarea>
+  </div>
+  <div>
+    <button type="submit" id="contact-submit" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg text-sm font-semibold bg-gradient-to-r from-violet-500 to-pink-500 text-white hover:opacity-90 transition-opacity shadow-lg shadow-violet-500/20 disabled:opacity-50 disabled:cursor-not-allowed">
+      Send Message
+      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+    </button>
+  </div>
+  <div id="form-success" class="hidden p-4 rounded-lg bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 text-sm text-emerald-700 dark:text-emerald-400">
+    Thanks for your message! I'll be in touch soon.
+  </div>
+  <div id="form-error" class="hidden p-4 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-sm text-red-700 dark:text-red-400">
+    Something went wrong. Please try again or <a href="https://www.linkedin.com/in/alfy/" class="underline" target="_blank" rel="noopener noreferrer">message me on LinkedIn</a>.
+  </div>
+</form>
+<p class="text-xs text-zinc-500 dark:text-zinc-400 mt-4">By submitting this form you agree to your details being used to respond to your enquiry. View my <a href="privacy-policy/" class="text-violet-600 dark:text-violet-400 hover:underline">Privacy Policy</a>.</p>
+</div>
 
         <aside class="flex flex-col gap-4">
           <!-- Status card: desktop only -->
