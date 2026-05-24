@@ -2629,6 +2629,7 @@
   .focus\:border-violet-500:focus {
     border-color: var(--color-violet-500);
   }
+  .cursor-pointer { cursor: pointer; }
   .disabled\:opacity-50:disabled { opacity: 0.5; }
   .disabled\:cursor-not-allowed:disabled { cursor: not-allowed; }
   .placeholder-zinc-400::placeholder { color: var(--color-zinc-400); }
