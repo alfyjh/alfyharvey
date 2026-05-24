@@ -2594,3 +2594,60 @@
     }
   }
 }
+
+/* ── Contact form utilities missing from compiled CSS ── */
+:root, :host {
+  --color-emerald-50: oklch(97.9% 0.021 166.113);
+  --color-emerald-200: oklch(90.5% 0.093 164.15);
+  --color-emerald-400: oklch(76.5% 0.177 163.223);
+  --color-emerald-700: oklch(53.2% 0.144 159.422);
+  --color-emerald-800: oklch(43.2% 0.121 152.278);
+  --color-emerald-900: oklch(37.8% 0.077 168.94);
+  --color-red-50: oklch(97.1% 0.013 17.38);
+  --color-red-200: oklch(88.5% 0.062 18.334);
+  --color-red-700: oklch(50.5% 0.213 27.518);
+  --color-red-800: oklch(44.4% 0.177 26.127);
+  --color-red-900: oklch(39.6% 0.141 25.723);
+}
+
+@layer utilities {
+  .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+  .mb-1\.5 { margin-bottom: 0.375rem; }
+  .mt-4 { margin-top: 1rem; }
+  .resize-none { resize: none; }
+  .focus\:outline-none:focus { outline: none; }
+  .focus\:ring-2:focus {
+    --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width, 0px)) var(--tw-ring-color, currentcolor);
+    box-shadow: var(--tw-inset-shadow, 0 0 #0000), var(--tw-inset-ring-shadow, 0 0 #0000), var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow, 0 0 #0000);
+  }
+  .focus\:ring-violet-500\/50:focus {
+    --tw-ring-color: color-mix(in srgb, oklch(60.6% 0.25 292.717) 50%, transparent);
+  }
+  .focus\:border-violet-500:focus {
+    border-color: var(--color-violet-500);
+  }
+  .disabled\:opacity-50:disabled { opacity: 0.5; }
+  .disabled\:cursor-not-allowed:disabled { cursor: not-allowed; }
+  .placeholder-zinc-400::placeholder { color: var(--color-zinc-400); }
+  .placeholder-zinc-600::placeholder { color: var(--color-zinc-600); }
+  .bg-emerald-50 { background-color: var(--color-emerald-50); }
+  .border-emerald-200 { border-color: var(--color-emerald-200); }
+  .text-emerald-700 { color: var(--color-emerald-700); }
+  .bg-red-50 { background-color: var(--color-red-50); }
+  .border-red-200 { border-color: var(--color-red-200); }
+  .text-red-700 { color: var(--color-red-700); }
+  [data-theme="dark"] .dark\:bg-emerald-900\/20 {
+    background-color: color-mix(in srgb, var(--color-emerald-900) 20%, transparent);
+  }
+  [data-theme="dark"] .dark\:border-emerald-800 { border-color: var(--color-emerald-800); }
+  [data-theme="dark"] .dark\:text-emerald-400 { color: var(--color-emerald-400); }
+  [data-theme="dark"] .dark\:bg-red-900\/20 {
+    background-color: color-mix(in srgb, var(--color-red-900) 20%, transparent);
+  }
+  [data-theme="dark"] .dark\:border-red-800 { border-color: var(--color-red-800); }
+  [data-theme="dark"] .dark\:text-red-400 { color: var(--color-red-400); }
+  [data-theme="dark"] .dark\:placeholder-zinc-600::placeholder { color: var(--color-zinc-600); }
+}
