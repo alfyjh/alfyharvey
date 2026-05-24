@@ -151,6 +151,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
     btn.disabled = true;
     btn.textContent = 'Sending…';
     success.classList.add('hidden');
