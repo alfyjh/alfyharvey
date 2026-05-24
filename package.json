@@ -1,0 +1,11 @@
+{
+  "name": "alfyharvey",
+  "scripts": {
+    "build": "tailwindcss -i ./input.css -o ./assets/css/style.css",
+    "watch": "tailwindcss -i ./input.css -o ./assets/css/style.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "tailwindcss": "^4.1.0"
+  }
+}
