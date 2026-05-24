@@ -1,3 +1,19 @@
+// ── Freelance availability ────────────────────────────────────────────────────
+// Set to false when not taking on new work — updates all badges site-wide
+
+const FREELANCE_AVAILABLE = true;
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (!FREELANCE_AVAILABLE) {
+    document.querySelectorAll('[data-freelance-available]').forEach(el => el.classList.add('hidden'));
+    document.querySelectorAll('[data-freelance-unavailable]').forEach(el => el.classList.remove('hidden'));
+    document.querySelectorAll('[data-freelance] .bg-green-500').forEach(el => {
+      el.classList.replace('bg-green-500', 'bg-zinc-400');
+      el.classList.remove('animate-pulse');
+    });
+  }
+});
+
 // ── Theme ────────────────────────────────────────────────────────────────────
 
 const THEME_KEY = 'ah-theme';
