@@ -1,7 +1,7 @@
 // ── Freelance availability ────────────────────────────────────────────────────
 // Set to false when not taking on new work — updates all badges site-wide
 
-const FREELANCE_AVAILABLE = true;
+const FREELANCE_AVAILABLE = false;
 
 document.addEventListener('DOMContentLoaded', () => {
   if (!FREELANCE_AVAILABLE) {
