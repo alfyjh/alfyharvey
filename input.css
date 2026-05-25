@@ -274,6 +274,8 @@
   }
   .theme-toggle:hover .icon-sun  { color: var(--color-pink-500);   }
   .theme-toggle:hover .icon-moon { color: var(--color-violet-500); }
+  [data-theme="dark"] .theme-toggle:hover .icon-sun  { color: #5560fb; }
+  [data-theme="dark"] .theme-toggle:hover .icon-moon { color: #8b93fd; }
   .theme-toggle .icon-sun {
     opacity: 1;
     transform: rotate(0deg) scale(1);
