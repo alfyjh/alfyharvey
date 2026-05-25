@@ -20,8 +20,17 @@
   /* Dark mode backgrounds */
   --color-zinc-700: #3a4a50;
   --color-zinc-800: #2e3d43;
-  --color-zinc-900: #222c30;
+  --color-zinc-900: #242e32;
   --color-zinc-950: #242e32;
+}
+
+/* Lighter accent in dark mode so blue reads well on the charcoal background */
+[data-theme="dark"] {
+  --color-violet-400: #8b93fd;
+  --color-violet-500: #5560fb;
+  --color-violet-600: #2933fa;
+  --color-fuchsia-500: #5560fb;
+  --color-pink-500: #5560fb;
 }
 
 @layer base {
