@@ -38,7 +38,7 @@
     --color-pink-50: oklch(97.1% 0.014 343.198);
     --color-pink-200: oklch(89.9% 0.061 343.231);
     --color-pink-400: oklch(71.8% 0.202 349.761);
-    --color-pink-500: #ecd6b7;
+    --color-pink-500: #a6b6fb;
     --color-pink-700: oklch(52.5% 0.223 3.958);
     --color-zinc-50: oklch(98.5% 0 0);
     --color-zinc-100: oklch(96.7% 0.001 286.375);
@@ -769,13 +769,13 @@
     background-color: var(--color-pink-50);
   }
   .bg-pink-500\/8 {
-    background-color: color-mix(in srgb, #ecd6b7 8%, transparent);
+    background-color: color-mix(in srgb, #a6b6fb 8%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-pink-500) 8%, transparent);
     }
   }
   .bg-pink-500\/10 {
-    background-color: color-mix(in srgb, #ecd6b7 10%, transparent);
+    background-color: color-mix(in srgb, #a6b6fb 10%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-pink-500) 10%, transparent);
     }
@@ -1487,7 +1487,7 @@
   }
   .dark\:border-pink-500\/20 {
     &:where([data-theme=dark], [data-theme=dark] *) {
-      border-color: color-mix(in srgb, #ecd6b7 20%, transparent);
+      border-color: color-mix(in srgb, #a6b6fb 20%, transparent);
       @supports (color: color-mix(in lab, red, red)) {
         border-color: color-mix(in oklab, var(--color-pink-500) 20%, transparent);
       }
@@ -1568,7 +1568,7 @@
   }
   .dark\:bg-pink-500\/8 {
     &:where([data-theme=dark], [data-theme=dark] *) {
-      background-color: color-mix(in srgb, #ecd6b7 8%, transparent);
+      background-color: color-mix(in srgb, #a6b6fb 8%, transparent);
       @supports (color: color-mix(in lab, red, red)) {
         background-color: color-mix(in oklab, var(--color-pink-500) 8%, transparent);
       }
@@ -1576,7 +1576,7 @@
   }
   .dark\:bg-pink-500\/10 {
     &:where([data-theme=dark], [data-theme=dark] *) {
-      background-color: color-mix(in srgb, #ecd6b7 10%, transparent);
+      background-color: color-mix(in srgb, #a6b6fb 10%, transparent);
       @supports (color: color-mix(in lab, red, red)) {
         background-color: color-mix(in oklab, var(--color-pink-500) 10%, transparent);
       }
@@ -1584,7 +1584,7 @@
   }
   .dark\:bg-pink-500\/12 {
     &:where([data-theme=dark], [data-theme=dark] *) {
-      background-color: color-mix(in srgb, #ecd6b7 12%, transparent);
+      background-color: color-mix(in srgb, #a6b6fb 12%, transparent);
       @supports (color: color-mix(in lab, red, red)) {
         background-color: color-mix(in oklab, var(--color-pink-500) 12%, transparent);
       }
