@@ -87,6 +87,7 @@
     --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     --blur-sm: 8px;
     --blur-xl: 24px;
+    --blur-3xl: 64px;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -267,20 +268,38 @@
   .inset-0 {
     inset: calc(var(--spacing) * 0);
   }
+  .-top-32 {
+    top: calc(var(--spacing) * -32);
+  }
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
   .top-1\.5 {
     top: calc(var(--spacing) * 1.5);
   }
+  .top-1\/2 {
+    top: calc(1 / 2 * 100%);
+  }
   .top-16 {
     top: calc(var(--spacing) * 16);
+  }
+  .-right-32 {
+    right: calc(var(--spacing) * -32);
   }
   .right-0 {
     right: calc(var(--spacing) * 0);
   }
+  .right-1\/4 {
+    right: calc(1 / 4 * 100%);
+  }
+  .-bottom-32 {
+    bottom: calc(var(--spacing) * -32);
+  }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
+  }
+  .-left-32 {
+    left: calc(var(--spacing) * -32);
   }
   .-left-\[38px\] {
     left: calc(38px * -1);
@@ -426,6 +445,18 @@
   .h-\[22px\] {
     height: 22px;
   }
+  .h-\[300px\] {
+    height: 300px;
+  }
+  .h-\[500px\] {
+    height: 500px;
+  }
+  .h-\[600px\] {
+    height: 600px;
+  }
+  .h-\[700px\] {
+    height: 700px;
+  }
   .h-auto {
     height: auto;
   }
@@ -470,6 +501,18 @@
   }
   .w-\[22px\] {
     width: 22px;
+  }
+  .w-\[300px\] {
+    width: 300px;
+  }
+  .w-\[500px\] {
+    width: 500px;
+  }
+  .w-\[600px\] {
+    width: 600px;
+  }
+  .w-\[700px\] {
+    width: 700px;
   }
   .w-full {
     width: 100%;
@@ -696,10 +739,22 @@
       background-color: color-mix(in oklab, var(--color-violet-500) 5%, transparent);
     }
   }
+  .bg-violet-500\/8 {
+    background-color: color-mix(in srgb, #2933fa 8%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-violet-500) 8%, transparent);
+    }
+  }
   .bg-violet-500\/10 {
     background-color: color-mix(in srgb, #2933fa 10%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-violet-500) 10%, transparent);
+    }
+  }
+  .bg-violet-500\/15 {
+    background-color: color-mix(in srgb, #2933fa 15%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-violet-500) 15%, transparent);
     }
   }
   .bg-violet-500\/20 {
@@ -982,6 +1037,10 @@
     @supports (color: color-mix(in lab, red, red)) {
       --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-zinc-900) 5%, transparent) var(--tw-shadow-alpha), transparent);
     }
+  }
+  .blur-3xl {
+    --tw-blur: blur(var(--blur-3xl));
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
   .backdrop-blur-sm {
     --tw-backdrop-blur: blur(var(--blur-sm));
@@ -1312,6 +1371,30 @@
       background-color: color-mix(in srgb, oklch(39.6% 0.141 25.723) 20%, transparent);
       @supports (color: color-mix(in lab, red, red)) {
         background-color: color-mix(in oklab, var(--color-red-900) 20%, transparent);
+      }
+    }
+  }
+  .dark\:bg-violet-500\/12 {
+    &:where([data-theme=dark], [data-theme=dark] *) {
+      background-color: color-mix(in srgb, #2933fa 12%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        background-color: color-mix(in oklab, var(--color-violet-500) 12%, transparent);
+      }
+    }
+  }
+  .dark\:bg-violet-500\/15 {
+    &:where([data-theme=dark], [data-theme=dark] *) {
+      background-color: color-mix(in srgb, #2933fa 15%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        background-color: color-mix(in oklab, var(--color-violet-500) 15%, transparent);
+      }
+    }
+  }
+  .dark\:bg-violet-500\/20 {
+    &:where([data-theme=dark], [data-theme=dark] *) {
+      background-color: color-mix(in srgb, #2933fa 20%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        background-color: color-mix(in oklab, var(--color-violet-500) 20%, transparent);
       }
     }
   }
@@ -1855,6 +1938,59 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
+@property --tw-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-drop-shadow-size {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-backdrop-blur {
   syntax: "*";
   inherits: false;
@@ -1942,6 +2078,19 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-blur: initial;
+      --tw-brightness: initial;
+      --tw-contrast: initial;
+      --tw-grayscale: initial;
+      --tw-hue-rotate: initial;
+      --tw-invert: initial;
+      --tw-opacity: initial;
+      --tw-saturate: initial;
+      --tw-sepia: initial;
+      --tw-drop-shadow: initial;
+      --tw-drop-shadow-color: initial;
+      --tw-drop-shadow-alpha: 100%;
+      --tw-drop-shadow-size: initial;
       --tw-backdrop-blur: initial;
       --tw-backdrop-brightness: initial;
       --tw-backdrop-contrast: initial;
