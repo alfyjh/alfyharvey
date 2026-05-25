@@ -291,7 +291,7 @@
 
 /* ── Scroll reveal ─────────────────────────────────────────────────────────── */
 
-[data-reveal] {
+[data-reveal]:not(.is-visible) {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.55s ease, transform 0.55s ease;

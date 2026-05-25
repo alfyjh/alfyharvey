@@ -24,23 +24,12 @@
     --color-emerald-700: oklch(50.8% 0.118 165.612);
     --color-emerald-800: oklch(43.2% 0.095 166.913);
     --color-emerald-900: oklch(37.8% 0.077 168.94);
-    --color-violet-50: oklch(96.9% 0.016 293.756);
-    --color-violet-200: oklch(89.4% 0.057 293.283);
     --color-violet-300: oklch(81.1% 0.111 293.571);
     --color-violet-400: #5560fb;
     --color-violet-500: #2933fa;
     --color-violet-600: #1f27d4;
     --color-violet-700: #1720ae;
-    --color-fuchsia-50: oklch(97.7% 0.017 320.058);
-    --color-fuchsia-200: oklch(90.3% 0.076 319.62);
-    --color-fuchsia-400: oklch(74% 0.238 322.16);
-    --color-fuchsia-500: #2933fa;
-    --color-fuchsia-700: oklch(51.8% 0.253 323.949);
-    --color-pink-50: oklch(97.1% 0.014 343.198);
-    --color-pink-200: oklch(89.9% 0.061 343.231);
-    --color-pink-400: oklch(71.8% 0.202 349.761);
     --color-pink-500: #2933fa;
-    --color-pink-700: oklch(52.5% 0.223 3.958);
     --color-zinc-50: oklch(98.5% 0 0);
     --color-zinc-100: oklch(96.7% 0.001 286.375);
     --color-zinc-200: oklch(92% 0.004 286.32);
@@ -1287,11 +1276,6 @@
       }
     }
   }
-  .dark\:border-zinc-600 {
-    &:where([data-theme=dark], [data-theme=dark] *) {
-      border-color: var(--color-zinc-600);
-    }
-  }
   .dark\:border-zinc-700 {
     &:where([data-theme=dark], [data-theme=dark] *) {
       border-color: var(--color-zinc-700);
@@ -1351,14 +1335,6 @@
       background-color: color-mix(in srgb, #3a4a50 50%, transparent);
       @supports (color: color-mix(in lab, red, red)) {
         background-color: color-mix(in oklab, var(--color-zinc-700) 50%, transparent);
-      }
-    }
-  }
-  .dark\:bg-zinc-700\/60 {
-    &:where([data-theme=dark], [data-theme=dark] *) {
-      background-color: color-mix(in srgb, #3a4a50 60%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        background-color: color-mix(in oklab, var(--color-zinc-700) 60%, transparent);
       }
     }
   }
@@ -1763,7 +1739,7 @@
     transform: rotate(0deg) scale(1);
   }
 }
-[data-reveal] {
+[data-reveal]:not(.is-visible) {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.55s ease, transform 0.55s ease;
