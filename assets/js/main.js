@@ -159,11 +159,15 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   document.addEventListener('DOMContentLoaded', () => {
-    const els = [...document.querySelectorAll([
-      'main article',
-      'main .grid > div[class*="rounded"]',
-      'main [class*="space-y"] > div[class*="rounded"]',
-    ].join(', '))];
+    const hero = document.querySelector('main section');
+
+    const els = [...document.querySelectorAll(
+      'main article, main div[class*="rounded-xl"][class*="border"]'
+    )].filter(el => {
+      if (hero && hero.contains(el)) return false;
+      if (el.parentElement.closest('[data-reveal]')) return false;
+      return true;
+    });
 
     els.forEach(el => el.setAttribute('data-reveal', ''));
 
