@@ -10,28 +10,28 @@
   --font-display: 'Poppins', system-ui, -apple-system, sans-serif;
 
   /* Brand palette */
-  --color-violet-400: #7094f1;
-  --color-violet-500: #586cf7;
-  --color-violet-600: #4254d4;
-  --color-violet-700: #3040b0;
-  --color-fuchsia-500: #822faf;
-  --color-pink-500:   #a855d4;
+  --color-violet-400: #a6b6fb;
+  --color-violet-500: #3680f9;
+  --color-violet-600: #2060d8;
+  --color-violet-700: #1448b0;
+  --color-fuchsia-500: #6a90fb;
+  --color-pink-500:   #ecd6b7;
 
   /* Dark mode backgrounds */
-  --color-zinc-700: #352868;
-  --color-zinc-800: #261d52;
-  --color-zinc-900: #1a1238;
-  --color-zinc-950: #0f0920;
+  --color-zinc-700: #4a4580;
+  --color-zinc-800: #302c68;
+  --color-zinc-900: #231f52;
+  --color-zinc-950: #393477;
 }
 
 @layer base {
   html { scroll-behavior: smooth; }
   body {
     -webkit-font-smoothing: antialiased;
-    background-color: #fffefb;
+    background-color: #f6fbfe;
   }
   [data-theme="dark"] body {
-    background-color: #0f0920;
+    background-color: #393477;
   }
 }
 
