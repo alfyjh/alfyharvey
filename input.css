@@ -14,14 +14,14 @@
   --color-violet-500: #586cf7;
   --color-violet-600: #4254d4;
   --color-violet-700: #3040b0;
-  --color-fuchsia-500: #aeabeb;
-  --color-pink-500:   #dbd3ff;
+  --color-fuchsia-500: #7094f1;
+  --color-pink-500:   #aeabeb;
 
   /* Dark mode backgrounds */
-  --color-zinc-700: #3d3270;
-  --color-zinc-800: #2e2460;
-  --color-zinc-900: #231850;
-  --color-zinc-950: #2a1c4f;
+  --color-zinc-700: #352868;
+  --color-zinc-800: #261d52;
+  --color-zinc-900: #1a1238;
+  --color-zinc-950: #0f0920;
 }
 
 @layer base {
@@ -31,7 +31,7 @@
     background-color: #fffefb;
   }
   [data-theme="dark"] body {
-    background-color: #2a1c4f;
+    background-color: #0f0920;
   }
 }
 
