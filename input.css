@@ -27,6 +27,11 @@
   --color-zinc-950: #242e32;
 }
 
+/* Disable all transitions during theme switch to prevent colour lag */
+.no-transition * {
+  transition: none !important;
+}
+
 /* Lighter accent in dark mode so blue reads well on the charcoal background */
 [data-theme="dark"] {
   --color-violet-400: #8b93fd;

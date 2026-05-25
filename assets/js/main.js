@@ -23,9 +23,13 @@ function getSystemTheme() {
 }
 
 function applyTheme(theme) {
+  document.documentElement.classList.add('no-transition');
   document.documentElement.setAttribute('data-theme', theme);
   const btn = document.querySelector('.theme-toggle');
   if (btn) btn.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`);
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    document.documentElement.classList.remove('no-transition');
+  }));
 }
 
 function initTheme() {
