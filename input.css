@@ -17,6 +17,9 @@
   --color-fuchsia-500: #2933fa;
   --color-pink-500:   #2933fa;
 
+  /* Light mode background */
+  --color-stone-50: #fcf8f6;
+
   /* Dark mode backgrounds */
   --color-zinc-700: #3a4a50;
   --color-zinc-800: #2e3d43;
