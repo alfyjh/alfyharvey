@@ -10,11 +10,11 @@
   --font-display: 'Poppins', system-ui, -apple-system, sans-serif;
 
   /* Brand palette */
-  --color-violet-400: #9f86c0;
-  --color-violet-500: #5e548e;
-  --color-violet-600: #4a3f72;
-  --color-violet-700: #3a3060;
-  --color-fuchsia-500: #be95c4;
+  --color-violet-400: #b08dd6;
+  --color-violet-500: #8766bf;
+  --color-violet-600: #6e54a6;
+  --color-violet-700: #5a3f8c;
+  --color-fuchsia-500: #c47dd1;
   --color-pink-500:   #e0b1cb;
 
   /* Dark mode backgrounds */
@@ -37,11 +37,11 @@
 
 @layer utilities {
   .dot-grid {
-    background-image: radial-gradient(circle, rgb(94 84 142 / 0.12) 1px, transparent 1px);
+    background-image: radial-gradient(circle, color-mix(in oklch, var(--color-violet-500) 12%, transparent) 1px, transparent 1px);
     background-size: 28px 28px;
   }
   [data-theme="light"] .dot-grid {
-    background-image: radial-gradient(circle, rgb(94 84 142 / 0.07) 1px, transparent 1px);
+    background-image: radial-gradient(circle, color-mix(in oklch, var(--color-violet-500) 7%, transparent) 1px, transparent 1px);
   }
 }
 
@@ -81,12 +81,12 @@
     color: rgb(161 161 170);
   }
   .prose-styles a {
-    color: rgb(94 84 142);
+    color: var(--color-violet-600);
     text-decoration: underline;
     text-underline-offset: 3px;
   }
   [data-theme="dark"] .prose-styles a {
-    color: rgb(159 134 192);
+    color: var(--color-violet-400);
   }
   .prose-styles strong {
     font-weight: 600;
@@ -108,7 +108,7 @@
     bottom: -2px;
     left: 0;
     height: 2px;
-    background: linear-gradient(to right, rgb(94 84 142), rgb(224 177 203));
+    background: linear-gradient(to right, var(--color-violet-500), var(--color-pink-500));
     background-attachment: fixed;
     background-size: 100vw 2px;
   }
@@ -170,8 +170,8 @@
       height: 10px;
     }
     [data-theme="dark"] .nav__submenu {
-      background-color: rgb(42 30 78 / 0.97);
-      border-color: rgb(58 45 106);
+      background-color: color-mix(in oklch, var(--color-zinc-900) 97%, transparent);
+      border-color: var(--color-zinc-700);
     }
     .relative:hover > .nav__submenu,
     .relative:focus-within > .nav__submenu {
@@ -232,8 +232,8 @@
     -webkit-backdrop-filter: blur(12px);
   }
   [data-theme="dark"] .site-header {
-    border-bottom-color: rgb(58 45 106);
-    background-color: rgb(35 25 66 / 0.9);
+    border-bottom-color: var(--color-zinc-700);
+    background-color: color-mix(in oklch, var(--color-zinc-950) 90%, transparent);
   }
   @media (min-width: 768px) {
     .nav--solid,
@@ -245,8 +245,8 @@
     }
     [data-theme="dark"] .nav--solid,
     [data-theme="dark"] .nav--transparent.is-scrolled {
-      border-bottom-color: rgb(58 45 106);
-      background-color: rgb(35 25 66 / 0.9);
+      border-bottom-color: var(--color-zinc-700);
+      background-color: color-mix(in oklch, var(--color-zinc-950) 90%, transparent);
     }
     .nav--transparent:not(.is-scrolled) {
       border-bottom: 1px solid transparent;
@@ -260,8 +260,8 @@
   .theme-toggle span svg {
     transition: opacity 0.3s ease, transform 0.4s ease, color 0.2s ease;
   }
-  .theme-toggle:hover .icon-sun  { color: rgb(224 177 203);  }
-  .theme-toggle:hover .icon-moon { color: rgb(94 84 142); }
+  .theme-toggle:hover .icon-sun  { color: var(--color-pink-500);   }
+  .theme-toggle:hover .icon-moon { color: var(--color-violet-500); }
   .theme-toggle .icon-sun {
     opacity: 1;
     transform: rotate(0deg) scale(1);
