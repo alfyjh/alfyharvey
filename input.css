@@ -8,6 +8,20 @@
 @theme {
   --font-sans: 'Poppins', system-ui, -apple-system, sans-serif;
   --font-display: 'Poppins', system-ui, -apple-system, sans-serif;
+
+  /* Brand palette */
+  --color-violet-400: #9f86c0;
+  --color-violet-500: #5e548e;
+  --color-violet-600: #4a3f72;
+  --color-violet-700: #3a3060;
+  --color-fuchsia-500: #be95c4;
+  --color-pink-500:   #e0b1cb;
+
+  /* Dark mode backgrounds */
+  --color-zinc-700: #3a2d6a;
+  --color-zinc-800: #2d2255;
+  --color-zinc-900: #2a1e4e;
+  --color-zinc-950: #231942;
 }
 
 @layer base {
@@ -17,17 +31,17 @@
     background-color: rgb(250 250 249); /* stone-50 */
   }
   [data-theme="dark"] body {
-    background-color: rgb(24 24 27); /* zinc-900 */
+    background-color: #231942;
   }
 }
 
 @layer utilities {
   .dot-grid {
-    background-image: radial-gradient(circle, rgb(139 92 246 / 0.12) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgb(94 84 142 / 0.12) 1px, transparent 1px);
     background-size: 28px 28px;
   }
   [data-theme="light"] .dot-grid {
-    background-image: radial-gradient(circle, rgb(139 92 246 / 0.07) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgb(94 84 142 / 0.07) 1px, transparent 1px);
   }
 }
 
@@ -67,12 +81,12 @@
     color: rgb(161 161 170);
   }
   .prose-styles a {
-    color: rgb(124 58 237);
+    color: rgb(94 84 142);
     text-decoration: underline;
     text-underline-offset: 3px;
   }
   [data-theme="dark"] .prose-styles a {
-    color: rgb(167 139 250);
+    color: rgb(159 134 192);
   }
   .prose-styles strong {
     font-weight: 600;
@@ -94,7 +108,7 @@
     bottom: -2px;
     left: 0;
     height: 2px;
-    background: linear-gradient(to right, rgb(139 92 246), rgb(236 72 153));
+    background: linear-gradient(to right, rgb(94 84 142), rgb(224 177 203));
     background-attachment: fixed;
     background-size: 100vw 2px;
   }
@@ -156,8 +170,8 @@
       height: 10px;
     }
     [data-theme="dark"] .nav__submenu {
-      background-color: rgb(24 24 27 / 0.97);
-      border-color: rgb(63 63 70);
+      background-color: rgb(42 30 78 / 0.97);
+      border-color: rgb(58 45 106);
     }
     .relative:hover > .nav__submenu,
     .relative:focus-within > .nav__submenu {
@@ -218,8 +232,8 @@
     -webkit-backdrop-filter: blur(12px);
   }
   [data-theme="dark"] .site-header {
-    border-bottom-color: rgb(39 39 42);
-    background-color: rgb(9 9 11 / 0.9);
+    border-bottom-color: rgb(58 45 106);
+    background-color: rgb(35 25 66 / 0.9);
   }
   @media (min-width: 768px) {
     .nav--solid,
@@ -231,8 +245,8 @@
     }
     [data-theme="dark"] .nav--solid,
     [data-theme="dark"] .nav--transparent.is-scrolled {
-      border-bottom-color: rgb(39 39 42);
-      background-color: rgb(9 9 11 / 0.9);
+      border-bottom-color: rgb(58 45 106);
+      background-color: rgb(35 25 66 / 0.9);
     }
     .nav--transparent:not(.is-scrolled) {
       border-bottom: 1px solid transparent;
@@ -246,8 +260,8 @@
   .theme-toggle span svg {
     transition: opacity 0.3s ease, transform 0.4s ease, color 0.2s ease;
   }
-  .theme-toggle:hover .icon-sun  { color: rgb(236 72 153);  }
-  .theme-toggle:hover .icon-moon { color: rgb(139 92 246); }
+  .theme-toggle:hover .icon-sun  { color: rgb(224 177 203);  }
+  .theme-toggle:hover .icon-moon { color: rgb(94 84 142); }
   .theme-toggle .icon-sun {
     opacity: 1;
     transform: rotate(0deg) scale(1);
