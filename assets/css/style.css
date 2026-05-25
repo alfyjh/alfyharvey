@@ -26,7 +26,6 @@
     --color-emerald-900: oklch(37.8% 0.077 168.94);
     --color-violet-50: oklch(96.9% 0.016 293.756);
     --color-violet-200: oklch(89.4% 0.057 293.283);
-    --color-violet-300: oklch(81.1% 0.111 293.571);
     --color-violet-400: oklch(70.2% 0.183 293.541);
     --color-violet-500: oklch(60.6% 0.25 292.717);
     --color-violet-600: oklch(54.1% 0.281 293.009);
@@ -95,11 +94,9 @@
     --leading-relaxed: 1.625;
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
-    --radius-2xl: 1rem;
     --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     --blur-sm: 8px;
     --blur-xl: 24px;
-    --blur-2xl: 40px;
     --blur-3xl: 64px;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -2029,6 +2026,15 @@
     opacity: 1;
     transform: rotate(0deg) scale(1);
   }
+}
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
 }
 @property --tw-translate-x {
   syntax: "*";

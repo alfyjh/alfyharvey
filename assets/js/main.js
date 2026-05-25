@@ -153,6 +153,38 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: true });
 }());
 
+// ── Scroll reveal ─────────────────────────────────────────────────────────────
+
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const els = [...document.querySelectorAll([
+      'main article',
+      'main .grid > div[class*="rounded"]',
+      'main [class*="space-y"] > div[class*="rounded"]',
+    ].join(', '))];
+
+    els.forEach(el => el.setAttribute('data-reveal', ''));
+
+    els.forEach(el => {
+      const siblings = [...el.parentElement.children].filter(c => c.hasAttribute('data-reveal'));
+      const idx = siblings.indexOf(el);
+      if (idx > 0) el.style.transitionDelay = `${idx * 80}ms`;
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(({ target, isIntersecting }) => {
+        if (!isIntersecting) return;
+        target.classList.add('is-visible');
+        observer.unobserve(target);
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    els.forEach(el => observer.observe(el));
+  });
+}());
+
 // ── Contact form (Formspree) ──────────────────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', () => {
