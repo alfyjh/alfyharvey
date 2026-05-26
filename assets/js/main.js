@@ -194,7 +194,16 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
 
-    els.forEach(el => observer.observe(el));
+    // Elements already in the viewport on load get revealed immediately — no animation.
+    // Only off-screen elements are observed so the transition always has a hidden state to start from.
+    els.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('is-visible');
+      } else {
+        observer.observe(el);
+      }
+    });
   });
 }());
 
