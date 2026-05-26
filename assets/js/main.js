@@ -170,13 +170,11 @@ document.addEventListener('DOMContentLoaded', () => {
       'main article, main div[class*="rounded-xl"][class*="border"]'
     )].filter(el => !(hero && hero.contains(el)));
 
-    // Tier 2: section content wrappers, only where no cards exist inside
+    // Tier 2: section content wrappers (max-w divs only, excludes orbs/decorations)
+    // Only used for sections that contain no card-level elements
     const sectionDivs = [...document.querySelectorAll(
-      'main section:not(:first-child) > div'
-    )].filter(el => {
-      if (hero && hero.contains(el)) return false;
-      return !cards.some(card => el.contains(card));
-    });
+      'main section:not(:first-child) > div[class*="max-w-"]'
+    )].filter(el => !cards.some(card => el.contains(card)));
 
     const els = [...cards, ...sectionDivs];
 
