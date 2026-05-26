@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="orb1" cx="100%" cy="0%" r="55%">
+      <stop offset="0%" stop-color="#2933fa" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#2933fa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="0%" cy="100%" r="40%">
+      <stop offset="0%" stop-color="#2933fa" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#2933fa" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#242e32"/>
+
+  <!-- Orbs -->
+  <rect width="1200" height="630" fill="url(#orb1)"/>
+  <rect width="1200" height="630" fill="url(#orb2)"/>
+
+</svg>
