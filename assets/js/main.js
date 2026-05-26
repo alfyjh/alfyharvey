@@ -165,13 +165,20 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('DOMContentLoaded', () => {
     const hero = document.querySelector('main section');
 
-    const els = [...document.querySelectorAll(
+    // Tier 1: individual cards/articles
+    const cards = [...document.querySelectorAll(
       'main article, main div[class*="rounded-xl"][class*="border"]'
+    )].filter(el => !(hero && hero.contains(el)));
+
+    // Tier 2: section content wrappers, only where no cards exist inside
+    const sectionDivs = [...document.querySelectorAll(
+      'main section:not(:first-child) > div'
     )].filter(el => {
       if (hero && hero.contains(el)) return false;
-      if (el.parentElement.closest('[data-reveal]')) return false;
-      return true;
+      return !cards.some(card => el.contains(card));
     });
+
+    const els = [...cards, ...sectionDivs];
 
     els.forEach(el => el.setAttribute('data-reveal', ''));
 
@@ -187,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         target.classList.add('is-visible');
         observer.unobserve(target);
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
 
     els.forEach(el => observer.observe(el));
   });
